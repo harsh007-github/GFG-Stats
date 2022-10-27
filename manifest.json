@@ -6,8 +6,28 @@
     "default popup": "popup.html",
     "default_icon": "logo.png"
   },
-  "permissions": ["activeTab"],
   "icons": {
     "128": "logo.png"
   }
+
+"permissions"[
+    "https://github.com/*",
+    "https://api.github.com/*",
+    "https://practice.geeksforgeeks.org/*",
+    "tabs",
+    "unlimitedStorage",
+    "storage"
+],
+"content_scripts":[
+  "matches": [
+    "https://github.com/*",
+    "https://practice.geeksforgeeks.org/*"
+],
+"run_at": "document_idle",
+]
+"content_security_policy": "script-src 'self' https://code.jquery.com/jquery-3.3.1.min.js https://github.com/login/oauth/authorize https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js; object-src 'self'"
+
+
+
+
 }
